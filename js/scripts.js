@@ -52,3 +52,36 @@ function playRound(playerSelection, computerSelection) {
 
     return "You Lose! " + lowercaseComputerSelection + " beats " + lowercasePlayerSelection + "!";
 }
+
+function printGreeting(){
+    const greeting = "Hello! Let's play rock paper scissors!\n";
+    console.log(greeting);
+}
+
+
+function game(){
+    printGreeting();
+    let playerScore = 0;
+    let computerScore = 0;
+    while ( playerScore + computerScore < 5) {
+        let playerSelection = promptPlayer();
+        let computerSelection = computerPlay();
+        let roundResult = playRound(playerSelection, computerSelection);
+        console.log(roundResult);
+        let roundStatusIndicator = roundResult.split(" ", 2)[1];
+        if (roundStatusIndicator === "Win!") {
+            playerScore++;
+        }
+        else if (roundStatusIndicator === "Lose!") {
+            computerScore++;
+        }
+        console.log("Current score is Player: " + playerScore + " Computer: " + computerScore);
+    }
+    
+    if (playerScore > computerScore){
+        console.log("You Win! This time...");
+    }
+    else {
+        console.log("You Lose! This time...");
+    }
+}
