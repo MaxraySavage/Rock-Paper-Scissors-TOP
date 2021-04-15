@@ -33,8 +33,8 @@ After the loop completes we will check to see who won and display the final scor
 The Odin Project has a suggested order for how to divide this project up. Let's try it out. I'm going to add another function ```promptPlayer``` that handles the input loop making sure that we get a good string from the user.
 
 - [x] Create a Git repo for the project
--[ ] Create a blank HTML document that links to an external script
--[ ] Build the ```computerPlay()``` function that randomly returns rock paper or scissors.
--[ ] Write the ```promptPlayer()``` function that gets a move from the player
--[ ] Write a function ```playRound(playerSelection, computerSelection)``` that returns the result of a round of RPS 
--[ ] Write the full ```game()``` function
+- [ ] Create a blank HTML document that links to an external script
+- [ ] Build the ```computerPlay()``` function that randomly returns rock paper or scissors.
+- [ ] Write the ```promptPlayer()``` function that gets a move from the player
+- [ ] Write a function ```playRound(playerSelection, computerSelection)``` that returns the result of a round of RPS 
+- [ ] Write the full ```game()``` function
