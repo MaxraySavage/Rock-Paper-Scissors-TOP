@@ -34,7 +34,7 @@ The Odin Project has a suggested order for how to divide this project up. Let's 
 
 - [x] Create a Git repo for the project
 - [x] Create a boilerplate HTML document that links to an external script
-- [ ] Build the ```computerPlay()``` function that randomly returns rock paper or scissors.
-- [ ] Write the ```promptPlayer()``` function that gets a move from the player
+- [x] Build the ```computerPlay()``` function that randomly returns rock paper or scissors.
+- [x] Write the ```promptPlayer()``` function that gets a move from the player
 - [ ] Write a function ```playRound(playerSelection, computerSelection)``` that returns the result of a round of RPS 
 - [ ] Write the full ```game()``` function
