@@ -38,3 +38,6 @@ The Odin Project has a suggested order for how to divide this project up. Let's 
 - [x] Write the ```promptPlayer()``` function that gets a move from the player
 - [x] Write a function ```playRound(playerSelection, computerSelection)``` that returns the result of a round of RPS 
 - [x] Write the full ```game()``` function
+
+## Lessons Learned
+I loved working with this framework! I think part of that was I didn't stop to second guess whether the structure was working while coding so I was able to just iterate through the to do list and end up with a completed project in a relatively linear fashion. That may not be reasonable to expect for larger projects buit it was still a very pleasurable experience! I went into this project a little skeptical of the exercise but it really helped me focus and get the tasks done quickly. Very fun!
