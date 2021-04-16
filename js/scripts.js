@@ -68,6 +68,7 @@ function game(){
         let computerSelection = computerPlay();
         let roundResult = playRound(playerSelection, computerSelection);
         console.log(roundResult);
+        // Uses the second word of the round result to figure out if the player won or lost the round
         let roundStatusIndicator = roundResult.split(" ", 2)[1];
         if (roundStatusIndicator === "Win!") {
             playerScore++;
