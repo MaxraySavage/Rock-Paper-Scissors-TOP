@@ -1,43 +1,23 @@
 # Rock-Paper-Scissors-TOP
-A game of rock paper scissors for the console. Written in Javascript.
+A game of rock paper scissors. Implemented with Javascript, HTML, CSS.
 
 ## Goals 
-Gain familiarity with problem solving with javascript. Practice "divide and conquer" strategies for building code solutions.
-
-## The Problem Solving Methodology
-The Odin Project recommends using a three step process to solve problems:
-* Understand the problem
-* Plan
-* Divide and Conquer
-
-Let's try that with this problem.
+Gain familiarity with manipulating the DOM with Javascript. Builds on the console version of this project, description of that (here)[].
 
 ### Understand the Problem
-Write a program that takes string input from a user. Use that input to select rock paper or scissors. Select rock paper or scissors for the computer. Determine the result of the game round. Print the result of the round. Update the score with that result. Loop through for 5 rounds. Print who won more rounds.
+The final version should have, at minimum, 3 buttons for user input, a div for displaying messages to the user, some score tracking from round to round. 
 
 
 ### Plan
-The user will call a function we will name ```game()``` in the browser console. 
-
-First we will print a welcome function that lets the user know how to interact with our game.
-
-Within our program we will need to declare some variable before entering the game loop so they can be accessed across loops and after the loop is completed. Particularly I am thinking about ```userScore``` and ```computerScore```.
-
-We will then start the game loop. We will probably use a while loop because we want to continue until there have been 5 rounds won.  We recognize that this could take an arbitrary number of rounds because the user and computer can tie any number of times. So a for loop would not work so well. This may end up looking something like ```while userScore + computerScore <=5```.
-
-Within the loop we will call a function called ```playRound()``` that will execute a round of RPS and return the result. The result is which player won. Before calling ```playRound()``` we should display the current score of the game i.e. ```Human: 0, Computer: 5```.
-
-After the loop completes we will check to see who won and display the final score with a message declaring the winner. 
+First we need three buttons labeled rock paper scissors. These can be exceptionally ugly as long as they work. We can then set the buttons to priont their label to console on press to test to see that they work. Then we can can build our div for communicating with the user. We can test this by writing the label of the button pressed to the div now instead of the console. Figure out how to display the running score, and announce a winner of the game once one player reaches 5 points. Then as a stretch we can add a reset button.
 
 ### Divide and Conquer
-The Odin Project has a suggested order for how to divide this project up. Let's try it out. I'm going to add another function ```promptPlayer``` that handles the input loop making sure that we get a good string from the user.
 
-- [x] Create a Git repo for the project
-- [x] Create a boilerplate HTML document that links to an external script
-- [x] Build the ```computerPlay()``` function that randomly returns rock paper or scissors.
-- [x] Write the ```promptPlayer()``` function that gets a move from the player
-- [x] Write a function ```playRound(playerSelection, computerSelection)``` that returns the result of a round of RPS 
-- [x] Write the full ```game()``` function
+- [x] Create a Git branch from the console only version of this project
+- [x] Add three buttons to the html
+- [x] Add event listeners to the buttons to call playRound with their label as player input.
+- [ ] Add div for displaying results
+- [ ] display the running score, and announce a winner of the game once one player reaches 5 points
+- [ ] add a reset button
 
 ## Lessons Learned
-I loved working with this framework! I think part of that was I didn't stop to second guess whether the structure was working while coding so I was able to just iterate through the to do list and end up with a completed project in a relatively linear fashion. That may not be reasonable to expect for larger projects but it was still a very pleasurable experience! I went into this project a little skeptical of the exercise but it really helped me focus and get the tasks done quickly. Very fun!

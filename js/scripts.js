@@ -86,3 +86,20 @@ function game(){
         console.log("You Lose! This time...");
     }
 }
+
+
+const rockButton = document.getElementsByClassName('rock-button')[0];
+const paperButton = document.getElementsByClassName('paper-button')[0];
+const scissorsButton = document.getElementsByClassName('scissors-button')[0];
+
+rockButton.addEventListener("click", function() {
+    console.log(playRound("rock", computerPlay()));
+});
+
+paperButton.addEventListener("click", function() {
+    console.log(playRound("paper", computerPlay()));
+});
+
+scissorsButton.addEventListener("click", function() {
+    console.log(playRound("scissors", computerPlay()));
+});
