@@ -1,88 +1,101 @@
 const MOVES = ["rock", "paper", "scissors"];
 
+let playerScore = 0;
+let computerScore = 0;
+
 function computerPlay() {
-    let randomSelection = Math.floor(Math.random() * 3);
-    return MOVES[randomSelection];
+  let randomSelection = Math.floor(Math.random() * 3);
+  return MOVES[randomSelection];
 }
 
-function validMove(testMove) {
-    const lowercaseTestMove = testMove.toLowerCase();
-    for (const move of MOVES) {
-        if (lowercaseTestMove === move) {
-            return true;
-        }
-    }
-    return false;
+function theMoveThatWinsAgainst(move) {
+  switch (move.toLowerCase()) {
+    case "rock":
+      return "paper";
+    case "paper":
+      return "scissors";
+    case "scissors":
+      return "rock";
+  }
 }
 
-function theMoveThatWinsAgainst(move){
-    switch(move.toLowerCase()) {
-        case "rock":
-            return "paper";
-        case "paper":
-            return "scissors";
-        case "scissors":
-            return "rock";    
-    } 
+function playerResult(playerSelection, computerSelection) {
+  if (computerSelection === playerSelection) {
+    return "tie";
+  }
+
+  if (playerSelection === theMoveThatWinsAgainst(computerSelection)) {
+    return "win";
+  }
+
+  return "lose";
 }
 
-function promptPlayer() {
-    let input = prompt("Choose rock, paper, or scissors:");
-    while (!validMove(input)){
-        input = prompt("Choose rock, paper, or scissors (not case sensitive):");
-    }
-    return input.toLowerCase();
+function addDisplayText(text, divClass) {
+    const div = document.createElement("div");
+    div.classList.add(divClass);
+    div.textContent = text;
+    const displayContainer = document.getElementById("display-container");
+    displayContainer.appendChild(div);
 }
 
-function playRound(playerSelection, computerSelection) {
-    if(!validMove(playerSelection) || !validMove(computerSelection)) {
-        return "One of ya'll somehow played an invalid move!";
-    }
-    
-    const lowercasePlayerSelection = playerSelection.toLowerCase();
-    const lowercaseComputerSelection = computerSelection.toLowerCase();
-    
-    if (lowercaseComputerSelection === lowercasePlayerSelection){
-        return "It's a tie! You both played " + lowercasePlayerSelection + "!";
-    }
-
-    if (lowercasePlayerSelection === theMoveThatWinsAgainst(computerSelection)){
-        return "You Win! " + lowercasePlayerSelection + " beats " + lowercaseComputerSelection + "!";
-    }
-
-    return "You Lose! " + lowercaseComputerSelection + " beats " + lowercasePlayerSelection + "!";
+function updateScoreBoard() {
+    const scoreContainer = document.getElementById("score-container");
+    scoreContainer.innerText = "Current score is Player: " + playerScore + " Computer: " + computerScore;
 }
 
-function printGreeting(){
-    const greeting = "Hello! Let's play rock paper scissors!\n";
-    console.log(greeting);
+function resetGame() {
+    const displayContainer = document.getElementById("display-container");
+    while (displayContainer.firstChild) {
+        displayContainer.removeChild(displayContainer.firstChild);
+    }
+    playerScore = 0;
+    computerScore = 0;
+    updateScoreBoard();
 }
 
-
-function game(){
-    printGreeting();
-    let playerScore = 0;
-    let computerScore = 0;
-    while ( playerScore + computerScore < 5) {
-        let playerSelection = promptPlayer();
-        let computerSelection = computerPlay();
-        let roundResult = playRound(playerSelection, computerSelection);
-        console.log(roundResult);
-        // Uses the second word of the round result to figure out if the player won or lost the round
-        let roundStatusIndicator = roundResult.split(" ", 2)[1];
-        if (roundStatusIndicator === "Win!") {
-            playerScore++;
-        }
-        else if (roundStatusIndicator === "Lose!") {
-            computerScore++;
-        }
-        console.log("Current score is Player: " + playerScore + " Computer: " + computerScore);
+function playRound(playerMove) {
+    if ((playerScore >= 5) || (computerScore >= 5)) {
+        resetGame();
     }
-    
-    if (playerScore > computerScore){
-        console.log("You Win! This time...");
+    let computerMove = computerPlay();
+    res = playerResult(playerMove, computerMove);
+    if (res === "tie") {
+        let message = "It's a tie!";
+        addDisplayText(message, "round-tie");        
+    } else if (res === "win") {
+        let message = "You win this round!";
+        addDisplayText(message, "round-win");
+        playerScore++;
+    } else {
+        let message = "You lose this round!";
+        addDisplayText(message, "round-lose");
+        computerScore++;
     }
-    else {
-        console.log("You Lose! This time...");
+    updateScoreBoard();
+    if (playerScore >= 5) {
+        let message = "You win the whole game! Impressive.";
+        addDisplayText(message, "game-win");
+    }
+    if (computerScore >= 5) {
+        let message = "You lose the whole game! Keep training.";
+        addDisplayText(message, "game-lose");
     }
 }
+
+const rockButton = document.getElementById("rock-button");
+const paperButton = document.getElementById("paper-button");
+const scissorsButton = document.getElementById("scissors-button");
+
+
+rockButton.addEventListener("click", () => {
+  playRound("rock");
+});
+
+paperButton.addEventListener("click", () => {
+  playRound("paper")
+});
+
+scissorsButton.addEventListener("click", () => {
+  playRound("scissors");
+});
