@@ -92,14 +92,33 @@ const rockButton = document.getElementsByClassName('rock-button')[0];
 const paperButton = document.getElementsByClassName('paper-button')[0];
 const scissorsButton = document.getElementsByClassName('scissors-button')[0];
 
-rockButton.addEventListener("click", function() {
-    console.log(playRound("rock", computerPlay()));
+const resultsDisplay = document.getElementsByClassName('display-container')[0];
+
+
+rockButton.addEventListener("click", () => {
+    const div = document.createElement('div');
+    div.classList.add('round-result');
+    const roundResult = playRound("rock", computerPlay());
+    div.textContent = roundResult;
+    resultsDisplay.appendChild(div);
+    
 });
 
-paperButton.addEventListener("click", function() {
-    console.log(playRound("paper", computerPlay()));
+paperButton.addEventListener("click", () => {
+    const div = document.createElement('div');
+    div.classList.add('round-result');
+    const roundResult = playRound("paper", computerPlay());
+    div.textContent = roundResult;
+    resultsDisplay.appendChild(div);
 });
 
-scissorsButton.addEventListener("click", function() {
-    console.log(playRound("scissors", computerPlay()));
+scissorsButton.addEventListener("click", () => {
+    const div = document.createElement('div');
+    div.classList.add('round-result');
+    const roundResult = playRound("scissors", computerPlay());
+    div.textContent = roundResult;
+    resultsDisplay.appendChild(div);
 });
+
+
+

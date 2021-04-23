@@ -16,7 +16,7 @@ First we need three buttons labeled rock paper scissors. These can be exceptiona
 - [x] Create a Git branch from the console only version of this project
 - [x] Add three buttons to the html
 - [x] Add event listeners to the buttons to call playRound with their label as player input.
-- [ ] Add div for displaying results
+- [x] Add div for displaying results
 - [ ] display the running score, and announce a winner of the game once one player reaches 5 points
 - [ ] add a reset button
 
