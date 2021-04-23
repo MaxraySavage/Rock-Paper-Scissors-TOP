@@ -21,3 +21,4 @@ First we need three buttons labeled rock paper scissors. These can be exceptiona
 - [ ] add a reset button
 
 ## Lessons Learned
+I experimented with just approaching this problem with the ugliest code I could concoct and just running headfirst into the problem. It was helpful in that I was able tog ets ome things running rather quickly. But after adding the div for displaying results it got a little unwieldly and less fun. I think I'd like to refactor a little bit. 
