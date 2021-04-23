@@ -17,8 +17,10 @@ First we need three buttons labeled rock paper scissors. These can be exceptiona
 - [x] Add three buttons to the html
 - [x] Add event listeners to the buttons to call playRound with their label as player input.
 - [x] Add div for displaying results
-- [ ] display the running score, and announce a winner of the game once one player reaches 5 points
-- [ ] add a reset button
+- [x] display the running score, and announce a winner of the game once one player reaches 5 points
+- [x] add a reset button
 
 ## Lessons Learned
 I experimented with just approaching this problem with the ugliest code I could concoct and just running headfirst into the problem. It was helpful in that I was able tog ets ome things running rather quickly. But after adding the div for displaying results it got a little unwieldly and less fun. I think I'd like to refactor a little bit. 
+
+I ended up nixing the reset button and just having the game reset when you try and play after someone has already won. I made this very ugly but it wasn't too hard and I think could be refactored to look nice rather easily!
