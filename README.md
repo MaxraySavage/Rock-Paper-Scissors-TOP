@@ -2,7 +2,7 @@
 A game of rock paper scissors. Implemented with Javascript, HTML, CSS.
 
 ## Goals 
-Gain familiarity with manipulating the DOM with Javascript. Builds on the console version of this project, description of that (here)[].
+Gain familiarity with manipulating the DOM with Javascript. Builds on the console version of this project, description of that [here](console-prototype-README.md).
 
 ### Understand the Problem
 The final version should have, at minimum, 3 buttons for user input, a div for displaying messages to the user, some score tracking from round to round. 
